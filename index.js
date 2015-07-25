@@ -1,3 +1,4 @@
+var TwitterStream = require('./TwitterStream/TwitterStream.js').open();
 var express = require('express');
 var app = express();
 
@@ -12,5 +13,10 @@ app.set('view engine', 'jade');
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
+
+app.get('/', function (req, res) {
+	res.render('index', {title:'Hey', message:'Hello there!'});
+});
+
 
 
